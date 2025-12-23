@@ -161,11 +161,19 @@ body {
 	list-style: none;
 	padding: 0;
 	margin: 16px 0 24px;
+	position: relative;
 	display: flex;
-	align-items: flex-start;
-	justify-content: center;
 	flex-wrap: wrap;
-	gap: clamp(8px, 4vw, 28px);
+	justify-content: space-between;
+	align-content: space-between;
+	/* Separate horizontal and vertical gaps so we can pull rows closer */
+	--cg: clamp(8px, 3vw, 24px); /* column gap */
+	--rg: clamp(2px, 2vw, 14px); /* row gap (smaller to bring circles closer vertically) */
+	--ov: clamp(115px, 5vw, 115px); /* vertical overlap amount */
+	--b: clamp(140px, 45vw, 280px);
+	column-gap: var(--cg);
+	row-gap: var(--rg);
+	min-height: calc(2 * var(--b) + var(--rg) - var(--ov));
 }
 .garland::before {
 	content: "";
@@ -177,12 +185,12 @@ body {
 	border-radius: 999px;
 	filter: blur(.2px);
 }
-.garland li {
-	position: relative;
-}
+.garland li { position: relative; }
+.garland li.spacer { flex-basis: 100%; height: 0; padding: 0; margin: 0; }
+.garland li.right { margin-left: auto; margin-top: calc(-1 * var(--ov)); }
 .garland .bauble {
-	width: clamp(120px, 35vw, 240px);
-	height: clamp(120px, 35vw, 240px);
+	width: var(--b);
+	height: var(--b);
 	border-radius: 50%;
 	overflow: hidden;
 	padding: 0px;

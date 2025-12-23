@@ -111,8 +111,18 @@ function renderGarland(images) {
 	const list = document.getElementById("santa-garland");
 	if (!list || !images || images.length === 0) return;
 	list.innerHTML = "";
-	images.slice(0, 8).forEach((src, i) => {
+	const imgs = images.slice(0, 8);
+	imgs.forEach((src, i) => {
 		const li = document.createElement("li");
+		// Stagger into two rows: insert a spacer after the first item
+		if (i === 1) {
+			const spacer = document.createElement("li");
+			spacer.className = "spacer";
+			list.appendChild(spacer);
+		}
+		if (i === 1) {
+			li.classList.add("right");
+		}
 		const frame = document.createElement("div");
 		frame.className = "bauble";
 		const img = document.createElement("img");
