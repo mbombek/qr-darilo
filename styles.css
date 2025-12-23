@@ -170,7 +170,7 @@ body {
 	--cg: clamp(8px, 3vw, 24px); /* column gap */
 	--rg: clamp(2px, 2vw, 14px); /* row gap (smaller to bring circles closer vertically) */
 	--ov: clamp(64px, 5vw, 64px); /* vertical overlap amount */
-	--hx: clamp(4px, 3vw, 16px); /* horizontal nudge toward edges */
+	--hx: clamp(4px, 3vw, 20px); /* horizontal nudge toward edges */
 	--b: clamp(140px, 45vw, 280px);
 	column-gap: var(--cg);
 	row-gap: var(--rg);
