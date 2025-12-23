@@ -170,6 +170,7 @@ body {
 	--cg: clamp(8px, 3vw, 24px); /* column gap */
 	--rg: clamp(2px, 2vw, 14px); /* row gap (smaller to bring circles closer vertically) */
 	--ov: clamp(64px, 5vw, 64px); /* vertical overlap amount */
+	--hx: clamp(4px, 3vw, 16px); /* horizontal nudge toward edges */
 	--b: clamp(140px, 45vw, 280px);
 	column-gap: var(--cg);
 	row-gap: var(--rg);
@@ -187,7 +188,8 @@ body {
 }
 .garland li { position: relative; }
 .garland li.spacer { flex-basis: 100%; height: 0; padding: 0; margin: 0; }
-.garland li.right { margin-left: auto; margin-top: calc(-1 * var(--ov)); }
+.garland li:not(.right):not(.spacer) { transform: translateX(calc(-1 * var(--hx))); }
+.garland li.right { margin-left: auto; margin-top: calc(-1 * var(--ov)); transform: translateX(var(--hx)); }
 .garland .bauble {
 	width: var(--b);
 	height: var(--b);
