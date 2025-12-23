@@ -94,13 +94,9 @@ async function detectImagesFromConfig(cfg) {
 
 async function detectImagesHeuristically() {
 	const baseNames = [
-		"santa", "santa1", "santa2",
-		"santa-face", "santa-face-1", "santa-face-2",
-		"santa_face", "santa_face_1", "santa_face_2",
-		"santa-head", "santa_head",
-		"santa-claus", "santa_claus"
+		"santa1", "santa2"
 	];
-	const exts = ["png", "jpg", "jpeg", "webp"];
+	const exts = ["png", "jpg"];
 	const candidates = [];
 	for (const base of baseNames) {
 		for (const ext of exts) {
@@ -165,14 +161,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 	}
 
 	enableButton(() => {
-		setStatus("Tearing open the wrapping… 🎁");
+		setStatus("Odvijanje darila… 🎁");
 		launchConfetti(900);
 		setTimeout(() => {
-			setStatus("Opening your gift… ✨");
 			window.location.href = claimUrl;
 		}, 900);
 	});
-	setStatus("Ready! Tap the button to open your gift.");
+	setStatus("");
 });
 
 
