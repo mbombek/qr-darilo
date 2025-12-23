@@ -172,10 +172,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	enableButton(() => {
 		setStatus("Odvijanje darila… 🎁");
-		launchConfetti(900);
+		launchConfetti(1600);
 		setTimeout(() => {
 			window.location.href = claimUrl;
-		}, 900);
+		}, 1600);
 	});
 	setStatus("");
 });
