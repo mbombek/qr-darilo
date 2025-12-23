@@ -169,7 +169,7 @@ body {
 	/* Separate horizontal and vertical gaps so we can pull rows closer */
 	--cg: clamp(8px, 3vw, 24px); /* column gap */
 	--rg: clamp(2px, 2vw, 14px); /* row gap (smaller to bring circles closer vertically) */
-	--ov: clamp(115px, 5vw, 115px); /* vertical overlap amount */
+	--ov: clamp(64px, 5vw, 64px); /* vertical overlap amount */
 	--b: clamp(140px, 45vw, 280px);
 	column-gap: var(--cg);
 	row-gap: var(--rg);
